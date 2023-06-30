@@ -1,0 +1,11 @@
+.custom-scroll-bar-table::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scroll-bar-table::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll-bar-table::-webkit-scrollbar-thumb {
+  background-color: var(--color-text-n20);
+  border-radius: 10px;
+}

@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "./config";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, Playlist } from "./pages";
+import { MainLayout } from "./Layout";
+import { TrackProvider } from "./context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <TrackProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path={"/"} element={<MainLayout />}>
+              <Route index element={<Home />}></Route>
+              <Route path={"/playlist"} element={<Playlist />}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </TrackProvider>
+    </QueryClientProvider>
   );
 }
 

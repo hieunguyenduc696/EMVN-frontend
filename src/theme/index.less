@@ -1,0 +1,160 @@
+@import '~antd/lib/style/themes/variable.less';
+@import '~antd/dist/antd.variable.less';
+@import './mixins.less';
+@font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+@primary-color: ~'var(--color-primary-p50)';
+@primary-color-hover: ~'var(--color-primary-p70)';
+@primary-color-active: ~'var(--color-primary-p90)';
+@primary-color-outline: ~'var(--color-primary-p50)';
+@error-color: ~'var(--color-red-r50)';
+@error-color-hover: ~'var(--color-red-r50)';
+@error-color-active: ~'var(--color-red-r90)';
+@error-color-outline: ~'var(--color-red-r50)';
+@border-radius-base: 8px;
+@border-radius-sm: 5px;
+@shadow-color: rgba(0, 0, 0, 0.05);
+@shadow-1-down: 4px 4px 40px @shadow-color;
+@border-color-split: #f4f4f4;
+@border-color-base: #e5e5e5;
+@transparent-color: transparent;
+@btn-border-radius-base: @border-radius-sm;
+@btn-border-radius-sm: @border-radius-sm;
+@btn-font-weight: 600;
+@btn-font-weight: 600;
+@btn-default-color: ~'var(--color-text-n100)';
+@btn-height-base: 40px;
+@btn-disable-color: ~'var(--color-text-white)';
+@btn-disable-bg: ~'var(--color-text-n20)';
+@link-color: ~'var(--color-text-n50)';
+
+/* Size of bow-shadow, Used for input focus */
+@outline-width: 1px;
+
+.ant-btn > svg + span {
+  margin-left: 0.5rem;
+  vertical-align: 0.125rem;
+}
+
+// Select, Dropdown
+@select-border-color: ~'var(--color-text-n10)';
+
+// Menu list
+.ant-select-dropdown,
+.ant-dropdown-menu,
+.ant-dropdown-menu-root,
+.ant-dropdown-menu-vertical,
+.ant-dropdown-menu-light {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+@select-item-active-bg: var(--color-primary-p5);
+@select-item-selected-bg: var(--color-primary-p5);
+@dropdown-selected-bg: var(--color-primary-p5);
+
+.ant-select-item-option,
+.ant-dropdown-menu-item {
+  border-radius: 0.25rem;
+
+  &:not(.ant-dropdown-menu-item-danger, .ant-dropdown-menu-item-disabled, .ant-dropdown-menu-submenu-title-disabled) {
+    color: var(--color-text-n50);
+  }
+
+  &.ant-dropdown-menu-item-danger {
+    color: var(--color-red-r50);
+
+    &:hover {
+      color: var(--color-red-r50);
+      background-color: var(--color-red-r5);
+    }
+  }
+}
+
+// Form
+@input-height-base: 40px;
+@input-border-color: var(--color-text-n10);
+@form-vertical-label-padding: 0 0 0.25rem;
+@form-item-margin-bottom: 1rem;
+
+// Uppercase form label
+.ant-form-item-label {
+  text-transform: uppercase;
+}
+
+// Change Form item label required* to the right
+.ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+  &::before {
+    content: none;
+  }
+
+  &::after {
+    display: inline-block;
+    margin-right: 4px;
+    color: var(--color-red-r50);
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+    content: '*';
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.ant-layout-header {
+  background: #fff;
+  padding: 0;
+}
+
+.text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.ant-form-item-label > label {
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-text-n50);
+}
+
+@media (max-width: @screen-md) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.ant-select-selection-item-remove,
+.ant-modal-close-x {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
